@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: api-gateway
+  profiles:
+    active: dev
+  config:
+    import: optional:${SPRING_CONFIG_IMPORT:configserver:http://localhost:8071}
+logging:
+  level:
+    com:
+      example:
+        api_gateway: DEBUG
+#  cloud:
+#    gateway:
+#      server:
+#        webflux:
+#          discovery:
+#            locator:
+#              enabled: true
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  info:
+#    env:
+#      enabled: true
+#  endpoint:
+#    gateway:
+#      access: unrestricted
